@@ -11,7 +11,7 @@ from sqlalchemy import text
 from conexao import engine_supermarket
 
 # Caminho do dataset original:
-CAMINHO_CSV = Path(__file__).resolve().parent.parent / "data" / "raw" / "supermarket_sales.csv"
+CAMINHO_CSV = Path(__file__).resolve().parent.parent / "data" / "raw" / "supermarket_data_original.csv"
 
 # Leitura do csv:
 df_supermarket = pd.read_csv(CAMINHO_CSV)
