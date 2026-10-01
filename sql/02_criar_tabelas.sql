@@ -27,7 +27,7 @@ CREATE TABLE raw_vendas (
 DROP TABLE IF EXISTS vendas_tratadas;
 
 CREATE TABLE vendas_tratadas (
-    id_venda VARCHAR(50) PRIMARY KEY NOT NULL,
+    id_venda VARCHAR(50) PRIMARY KEY,
     filial VARCHAR(10) NOT NULL,
     cidade VARCHAR(100) NOT NULL,
     tipo_cliente VARCHAR(50),
@@ -43,5 +43,8 @@ CREATE TABLE vendas_tratadas (
     custo_mercadoria NUMERIC(12,2) CHECK (custo_mercadoria >= 0),
     margem_percentual NUMERIC(10,2),
     receita_bruta NUMERIC(12,2) CHECK (receita_bruta >= 0),
-    avaliacao NUMERIC(4,2) CHECK (avaliacao >= 0 AND avaliacao <= 10)
+    avaliacao NUMERIC(4,2) CHECK (avaliacao >= 0 AND avaliacao <= 10),
+    dia_semana VARCHAR(20),
+    mes INTEGER CHECK (mes BETWEEN 1 AND 12),
+    nome_mes VARCHAR(20)
 );
